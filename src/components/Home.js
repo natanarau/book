@@ -29,7 +29,6 @@ const Home = () => {
           id="pesquisa"
           name="pesquisa"
           label="Pesquise seu livro"
-          type="search"
           value={pesquisa}
           onChange={(event) => setPesquisa(event.target.value)}
         />
@@ -49,22 +48,23 @@ const Home = () => {
           !loading &&
           dados.map((livros) => (
             <Book key={livros.id}>
-              {livros.volumeInfo.imageLinks ? (
+              {dados && livros.volumeInfo.imageLinks ? (
                 <img src={livros.volumeInfo.imageLinks.smallThumbnail} alt="" />
               ) : (
                 <SemImg>Sem Imagem</SemImg>
               )}
               <BookConteudo>
                 <a
+                  rel="noreferrer"
                   target="_blank"
                   href={`https://books.google.com/ebooks?id=${livros.id}`}
                 >
-                  <h3>{livros.volumeInfo.title}</h3>
+                  <h3>{dados ? livros.volumeInfo.title : ''}</h3>
                 </a>
-                <a href="">
-                  <h4>{livros.volumeInfo.authors}</h4>
+                <a rel="noreferrer" target="_blank" href={livros.id}>
+                  <h4>{dados ? livros.volumeInfo.authors : ''}</h4>
                 </a>
-                <p>{livros.volumeInfo.description}</p>
+                <p>{dados ? livros.volumeInfo.description : ''}</p>
               </BookConteudo>
             </Book>
           ))}
