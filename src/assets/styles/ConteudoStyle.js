@@ -45,8 +45,13 @@ const BookConteudo = styled.div`
   h4 {
     margin: 0;
     font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  h3 {
+    font-family: 'Open Sans', sans-serif;
   }
   p {
+    font-family: 'Open Sans', sans-serif;
     max-width: 500px;
     overflow: hidden;
     text-overflow: ellipsis;

@@ -1,4 +1,3 @@
-import React from 'react';
 import Logo from '../assets/img/logo-2.png';
 import Topo from '../assets/styles/HeaderStyle';
 const Header = () => {
