@@ -59,12 +59,24 @@ const Home = () => {
                   target="_blank"
                   href={`https://books.google.com/ebooks?id=${livros.id}`}
                 >
-                  <h3>{dados ? livros.volumeInfo.title : ''}</h3>
+                  <h3>
+                    {livros.volumeInfo.title
+                      ? livros.volumeInfo.title
+                      : 'Sem dados'}
+                  </h3>
                 </a>
                 <a rel="noreferrer" target="_blank" href={livros.id}>
-                  <h4>{dados ? livros.volumeInfo.authors : ''}</h4>
+                  <h4>
+                    {livros.volumeInfo.authors
+                      ? livros.volumeInfo.authors
+                      : 'Sem dados'}
+                  </h4>
                 </a>
-                <p>{dados ? livros.volumeInfo.description : ''}</p>
+                <p>
+                  {livros.volumeInfo.description
+                    ? livros.volumeInfo.description
+                    : 'Sem dados'}
+                </p>
               </BookConteudo>
             </Book>
           ))}
